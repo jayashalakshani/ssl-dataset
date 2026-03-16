@@ -3,7 +3,7 @@
 # Top-level package init.
 # Exposes the version and all three sub-libraries from one place.
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __author__  = "Jayasha"
 
 from .landmarks    import SSLLandmarkDataset
