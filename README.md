@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="C:\Users\acer\OneDrive\NSBM\Research\Python_Library\ssl_dataset_logo.png" width="200" alt="ssl-dataset logo">
+  <img src=<img width="407" height="414" alt="ssl_dataset_logo" src="https://github.com/user-attachments/assets/229f92b3-dfd9-453b-a303-070501e07d20" />
 </p>
-<h1 align="center">ssl-dataset</h1>
+
 # ssl-dataset
 
 Python library for the **Sinhala Sign Language (SSL) dataset** — 55 sign classes, 4,060 samples, three ready-to-use sub-libraries.
