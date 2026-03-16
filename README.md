@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=""C:\Users\acer\OneDrive\NSBM\Research\Python_Library\ssl_dataset_logo.png"" width="200" alt="ssl-dataset logo">
+  <img src="C:\Users\acer\OneDrive\NSBM\Research\Python_Library\ssl_dataset_logo.png" width="200" alt="ssl-dataset logo">
 </p>
 <h1 align="center">ssl-dataset</h1>
 # ssl-dataset
