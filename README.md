@@ -108,7 +108,7 @@ print(CLASS_LABELS[54])  # 'මගේ'
 If you use this dataset in your research, please cite:
 
 ```
-Jayasha (2025). Sinhala Sign Language Dataset.
+Jayasha P.G. Lakshani (2025). Sinhala Sign Language Dataset.
 GitHub: https://github.com/jayashalakshani/ssl-dataset
 ```
 
