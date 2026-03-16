@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="150" height="150" alt="ssl_dataset_logo" src="https://github.com/user-attachments/assets/80c62c02-c3dd-4e0e-b72d-fc99baee334d" />
+  <img width="90" height="90" alt="ssl_dataset_logo" src="https://github.com/user-attachments/assets/80c62c02-c3dd-4e0e-b72d-fc99baee334d" />
 </p>
 
 # ssl-dataset
