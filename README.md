@@ -1,4 +1,4 @@
-<img width="407" height="414" alt="ssl_dataset_logo" src="https://github.com/user-attachments/assets/80c62c02-c3dd-4e0e-b72d-fc99baee334d" />
+<img width="200" height="200" alt="ssl_dataset_logo" src="https://github.com/user-attachments/assets/80c62c02-c3dd-4e0e-b72d-fc99baee334d" />
 
 
 # ssl-dataset
