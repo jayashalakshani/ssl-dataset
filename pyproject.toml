@@ -1,0 +1,113 @@
+[build-system]
+# build-system tells pip HOW to build the package.
+# We use "hatchling" — it is modern, simple, and requires zero extra config
+# files (unlike setuptools which needs setup.py or setup.cfg as well).
+requires      = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[project]
+# ── Identity ──────────────────────────────────────────────────────────────────
+name    = "ssl-dataset"
+version = "1.0.0"
+# The name on PyPI uses hyphens (ssl-dataset) but Python imports use
+# underscores (import ssl_dataset). This is the standard convention.
+
+authors = [
+    { name = "Jayasha", email = "" }
+]
+
+description = "Python library for the Sinhala Sign Language (SSL) dataset — landmarks, skeleton images, and preprocessed arrays for 55 sign classes."
+
+readme = "README.md"
+
+# Minimum Python version. We require 3.8+ because:
+#   - f-strings and pathlib are stable from 3.6
+#   - typing improvements we rely on landed in 3.8
+#   - most Colab environments run 3.9 or 3.10
+requires-python = ">=3.8"
+
+license = { text = "CC BY-NC 4.0" }
+
+# ── Keywords & classifiers (shown on PyPI) ────────────────────────────────────
+keywords = [
+    "sign language",
+    "sinhala",
+    "dataset",
+    "deep learning",
+    "mediapipe",
+    "hand landmarks",
+    "skeleton images",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: Creative Commons Attribution Non-Commercial 4.0",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Science/Research",
+]
+
+# ── Runtime dependencies ──────────────────────────────────────────────────────
+# These are installed automatically when someone does `pip install ssl-dataset`.
+# We pin minimum versions but allow any higher version — never pin exact
+# versions in a library (that would conflict with the user's own environment).
+dependencies = [
+    "numpy>=1.21",           # array operations throughout the library
+    "Pillow>=9.0",           # image loading in ssl_dataset.skeleton
+    "scikit-learn>=1.0",     # stratified train_test_split
+    "huggingface_hub>=0.16", # downloading files from HuggingFace
+]
+
+
+[project.optional-dependencies]
+# Optional dependency groups — installed with:
+#   pip install ssl-dataset[dev]
+#   pip install ssl-dataset[torch]
+#   pip install ssl-dataset[tensorflow]
+
+dev = [
+    # Tools for developing and testing the library itself
+    "pytest>=7.0",
+    "pytest-cov",
+    "black",
+    "isort",
+]
+
+torch = [
+    # PyTorch support — installed separately because it is large and
+    # users who only use TensorFlow don't need it
+    "torch>=1.12",
+]
+
+tensorflow = [
+    # TensorFlow support — same reason as torch
+    "tensorflow>=2.9",
+]
+
+
+[project.urls]
+# Links shown on the PyPI page
+Homepage   = "https://github.com/jayashalakshani/ssl-dataset"
+Repository = "https://github.com/jayashalakshani/ssl-dataset"
+Issues     = "https://github.com/jayashalakshani/ssl-dataset/issues"
+
+
+[tool.hatch.build.targets.wheel]
+# Tell hatchling exactly which directory is the Python package.
+# Without this, hatchling might get confused if there are other folders
+# in the repo (like docs/, tests/, notebooks/).
+packages = ["ssl_dataset"]
+
+
+[tool.hatch.build.targets.wheel.exclude]
+# Exclude compiled Python cache files from the published package.
+# These are regenerated automatically on the user's machine anyway.
+exclude = [
+    "ssl_dataset/**/__pycache__",
+    "ssl_dataset/**/*.pyc",
+]
