@@ -1,0 +1,80 @@
+[build-system]
+requires      = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[project]
+name    = "ssl-dataset"
+version = "1.0.0"
+
+authors = [
+    { name = "Jayasha", email = "" }
+]
+
+description = "Python library for the Sinhala Sign Language (SSL) dataset — landmarks, skeleton images, and preprocessed arrays for 55 sign classes."
+
+readme = "README.md"
+
+requires-python = ">=3.8"
+
+license = { text = "CC BY-NC 4.0" }
+
+keywords = [
+    "sign language",
+    "sinhala",
+    "dataset",
+    "deep learning",
+    "mediapipe",
+    "hand landmarks",
+    "skeleton images",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: Free For Educational Use",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Science/Research",
+]
+
+dependencies = [
+    "numpy>=1.21",
+    "Pillow>=9.0",
+    "scikit-learn>=1.0",
+    "huggingface_hub>=0.16",
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "black",
+    "isort",
+]
+
+torch = [
+    "torch>=1.12",
+]
+
+tensorflow = [
+    "tensorflow>=2.9",
+]
+
+
+[project.urls]
+Homepage   = "https://github.com/jayashalakshani/ssl-dataset"
+Repository = "https://github.com/jayashalakshani/ssl-dataset"
+Issues     = "https://github.com/jayashalakshani/ssl-dataset/issues"
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["ssl_dataset"]
+exclude  = [
+    "ssl_dataset/**/__pycache__",
+    "ssl_dataset/**/*.pyc",
+]
